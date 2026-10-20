@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nour Ouederni | Telecommunication Engineering Student</title>
+<meta name="description" content="Portfolio of Nour Ouederni, 3rd year telecommunication engineering student at ENIT, building IoT, embedded and AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12090f; --bg2:#1b0f18; --line:#35202e; --text:#f6e9f0; --muted:#b69aa9;
+  --pink:#ff3f9e; --pink-soft:#ffb3d6; --glow:rgba(255,63,158,.18);
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(18,9,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+nav b{font:700 1.1rem var(--display);letter-spacing:-.01em}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-size:.95rem}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--pink-soft)}
+@media(max-width:640px){nav ul li:nth-child(n+4){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:5.5rem 0 8rem}
+#wave{position:absolute;inset:auto 0 0 0;width:100%;height:260px;opacity:.9;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:.55rem;border:1px solid var(--line);background:var(--bg2);border-radius:99px;padding:.3rem .9rem;font-size:.9rem;color:var(--pink-soft)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 0 var(--pink);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(255,63,158,0)}100%{box-shadow:0 0 0 0 rgba(255,63,158,0)}}
+h1{font:800 clamp(3rem,9vw,6.4rem)/.95 var(--display);letter-spacing:-.035em;margin:1.2rem 0 1rem}
+h1 span{display:block;color:var(--pink)}
+.lead{max-width:34rem;font-size:1.2rem;color:#e4d0da;margin:0 0 2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:99px;font-weight:600;text-decoration:none;border:1.5px solid var(--pink);transition:background .2s,color .2s}
+.btn.main{background:var(--pink);color:#12090f}
+.btn.main:hover{background:var(--pink-soft);border-color:var(--pink-soft)}
+.btn.ghost:hover{background:var(--glow)}
+.photo{position:relative;width:260px;height:260px;border-radius:50%;padding:6px;background:conic-gradient(from 200deg,var(--pink),#7a1d52,var(--pink-soft),var(--pink));box-shadow:0 0 70px var(--glow)}
+.photo img,.photo .mono{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--bg2);display:block}
+.photo .mono{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);display:grid;place-items:center;font:800 5rem var(--display);color:var(--pink)}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.photo{order:-1;width:170px;height:170px}.photo .mono{font-size:3.2rem}.hero{padding-top:3rem}}
+
+/* sections */
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.9rem,4vw,2.7rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 2.2rem}
+h3{font:700 1.3rem/1.25 var(--display);margin:0 0 .3rem}
+.muted{color:var(--muted)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:38rem}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.facts li{padding:1rem 1.2rem;background:var(--bg2);border-left:3px solid var(--pink);border-radius:0 10px 10px 0}
+.facts b{display:block;font:700 1.05rem var(--display)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+
+/* timeline */
+.tl{position:relative;margin:0;padding:0 0 0 1.8rem;list-style:none;border-left:2px solid var(--line)}
+.tl li{position:relative;padding-bottom:2.6rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.8rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px var(--bg),0 0 14px var(--pink)}
+.when{color:var(--pink-soft);font-weight:600;font-size:.95rem}
+.tl ul{margin:.7rem 0 0;padding-left:1.1rem;max-width:46rem}
+.tl ul li{padding:0 0 .35rem}
+.tl ul li::before{display:none}
+.tl ul li::marker{color:var(--pink)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0 0;padding:0;list-style:none}
+.chips li{font-size:.85rem;padding:.2rem .7rem;border-radius:99px;background:var(--glow);color:var(--pink-soft);border:1px solid rgba(255,63,158,.3)}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:1.6rem;transition:border-color .2s}
+.card:hover{border-color:var(--pink)}
+.card.big{grid-column:1/-1;display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;padding:2.2rem;background:linear-gradient(135deg,#2a1121,var(--bg2) 60%);border-color:#5b2644}
+.card p{margin:.5rem 0 0}
+.card .year{color:var(--pink-soft);font-weight:600;font-size:.9rem}
+.hops{display:flex;flex-direction:column;justify-content:center;gap:.5rem;font-size:.92rem}
+.hops div{display:flex;align-items:center;gap:.8rem;padding:.55rem .9rem;border:1px dashed #7a3a5c;border-radius:10px}
+.hops div b{color:var(--pink)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.card.big{grid-template-columns:1fr}}
+
+.demo{margin:1rem 0 0;border-radius:12px;overflow:hidden;border:1px solid #5b2644;background:#000}
+.demo video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.demo figcaption{padding:.5rem .9rem;font-size:.85rem;color:var(--muted);background:var(--bg2)}
+.card.big.flip{grid-template-columns:1fr 1.2fr}
+.how{margin:.8rem 0 0;padding-left:1.1rem}.how li{margin-bottom:.3rem}.how li::marker{color:var(--pink)}
+.thanks{font-size:.9rem;color:var(--muted);margin-top:1rem}
+/* skills etc */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.cols h3{font-size:1.1rem;color:var(--pink-soft);margin-bottom:.8rem}
+.cols .chips{margin:0}
+.cols .chips li{background:var(--bg2);color:var(--text);border-color:var(--line)}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;list-style:none;padding:0;margin:0}
+.certs li{padding:1.2rem 1.4rem;background:var(--bg2);border:1px solid var(--line);border-radius:14px}
+.certs b{font:700 1.1rem var(--display);display:block}
+.lang{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:2.2rem 0 0;padding:0;list-style:none}
+.lang b{color:var(--pink-soft)}
+@media(max-width:820px){.cols,.certs{grid-template-columns:1fr}}
+
+/* contact */
+.contact{text-align:left}
+.contact a.mail{display:inline-block;font:800 clamp(1.4rem,4.6vw,3rem)/1.1 var(--display);letter-spacing:-.02em;color:var(--pink);text-decoration:none;word-break:break-all;border-bottom:3px solid var(--pink);padding-bottom:.2rem;margin:.4rem 0 1.8rem}
+.contact a.mail:hover{color:var(--pink-soft);border-color:var(--pink-soft)}
+footer{border-top:1px solid var(--line);padding:1.8rem 0;color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pill i{animation:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Nour Ouederni</b>
+<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<header class="hero">
+<canvas id="wave" aria-hidden="true"></canvas>
+<div class="wrap">
+  <div>
+    <span class="pill"><i></i>Looking for an internship</span>
+    <h1>Nour <span>Ouederni</span></h1>
+    <p class="lead">Third-year telecommunication engineering student at ENIT. I build connected devices that sense, think and send alerts, from ESP32 boards to LoRa networks to mobile apps.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">See my projects</a>
+      <a class="btn ghost" href="mailto:nour.ouederni@etudiant-enit.utm.tn">Email me</a>
+      <a class="btn ghost" href="https://github.com/NourOuederni" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/nour-ouederni" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="photo"><div class="mono" aria-hidden="true">NO</div><img src="https://github.com/NourOuederni.png?size=520" alt="Portrait of Nour Ouederni" width="248" height="248" onerror="this.remove()"></div>
+</div>
+</header>
+
+<main>
+<section id="about"><div class="wrap about">
+  <div>
+    <h2>About me</h2>
+    <p>I study telecommunication engineering at the National School of Engineering of Tunis (ENIT). What I enjoy most is the place where hardware, networks and AI meet: a small board that spots something, a radio link that carries the message, and an app that tells someone.</p>
+    <p>This summer I built a full field-monitoring system during an IoT internship. I’m now looking for my next internship, where I can keep building things that work outside the lab.</p>
+  </div>
+  <ul class="facts">
+    <li><b>ENIT, Tunis</b><span class="muted">Telecommunication Engineering, since September 2024</span></li>
+    <li><b>BAC Maths: 17.91</b><span class="muted">Followed by the Maths-Physics prep cycle at IPEIT (2022 to 2024)</span></li>
+    <li><b>President of G2FOSS</b><span class="muted">Student club leader, 2025 to 2026</span></li>
+  </ul>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <ol class="tl">
+    <li>
+      <span class="when">June to July 2026</span>
+      <h3>IoT Intern, Canadian System Technology</h3>
+      <ul>
+        <li>Built a rodent detection and monitoring system with firmware that takes burst photos when movement is detected (ESP32 AI Thinker and HC-SR04 sensor).</li>
+        <li>Trained and quantised a MobileNetV2 FOMO object detection model to run on the device.</li>
+        <li>Designed a multi-hop wireless network with ESP-NOW and LoRa so alerts travel across fields with no infrastructure.</li>
+        <li>Developed a React Native / Expo mobile app that works offline, syncs later and pushes Supabase Realtime notifications.</li>
+      </ul>
+    </li>
+    <li>
+      <span class="when">July 2025</span>
+      <h3>Summer Intern, Ooredoo (Technical Department)</h3>
+      <ul>
+        <li>Created an interactive technical support reference for different networking equipment.</li>
+        <li>Implemented a dashboard for the optic fiber service.</li>
+      </ul>
+    </li>
+  </ol>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card big">
+      <div>
+        <span class="year">Internship project, 2026</span>
+        <h3>Rodent Watch</h3>
+        <p>A camera node wakes up on movement, decides on the device whether it sees a rodent, and sends the alert hop by hop through a local radio mesh and a long-range LoRa link to a phone app that keeps working with no internet.</p>
+        <ul class="chips"><li>ESP32</li><li>TinyML / FOMO</li><li>ESP-NOW</li><li>LoRa</li><li>React Native</li><li>Supabase</li></ul>
+      </div>
+      <div class="hops" aria-label="Alert path">
+        <div><b>1</b> Camera node detects movement and runs the model</div>
+        <div><b>2</b> ESP-NOW relays the alert locally</div>
+        <div><b>3</b> LoRa carries it across the field</div>
+        <div><b>4</b> The app syncs and notifies the user</div>
+        <figure class="demo"><video controls preload="metadata" playsinline><source src="demos/rodent-watch.mp4" type="video/mp4" onerror="this.closest('figure').hidden=true"></video><figcaption>Rodent Watch demo</figcaption></figure>
+      </div>
+    </article>
+    <article class="card big flip">
+      <div>
+        <span class="year">Mini-project, 2026</span>
+        <h3>Wireless sensor network on Zolertia Z1</h3>
+        <p>Two boards talk over a low-power wireless link: every 5 seconds the client contacts the server, which orders an LED pattern. Both boards count from 0 to 7 in binary in sync, and the client confirms what it applied.</p>
+        <p>I simulated it in Cooja first, then flashed the same firmware onto two real boards. Biggest lesson: simulating before deploying saves a lot of time.</p>
+        <ul class="chips"><li>Contiki OS</li><li>Cooja</li><li>Zolertia Z1</li><li>6LoWPAN</li><li>RPL</li><li>C</li></ul>
+        <p class="thanks">Project supervised by Professor Tahar Ezzedine.</p>
+      </div>
+      <figure class="demo" style="align-self:center"><video controls preload="metadata" playsinline><source src="demos/zolertia-network.mp4" type="video/mp4" onerror="this.closest('figure').hidden=true"></video><figcaption>Zolertia network demo</figcaption></figure>
+    </article>
+    <article class="card big">
+      <div>
+        <span class="year">Reinforcement learning project, 2026-2027</span>
+        <h3>Intrusion response agent</h3>
+        <p>An intrusion detector raises alarms but doesn’t decide what to do. I built an agent that learns the response itself (investigate, block or isolate) by training only inside a simulated digital twin of a network node, using first-visit Monte Carlo control.</p>
+        <p>It found the optimal policy and matched the exact solution computed with value iteration. Monte Carlo also settled 27 to 31 times sooner than SARSA, Q-learning and Expected SARSA. With a noisy detector across 50 simulated nodes, nodes were compromised 2.3% of the time, against 88.4% with a passive IDS.</p>
+        <ul class="chips"><li>Python</li><li>Reinforcement learning</li><li>Monte Carlo control</li><li>Digital twin</li><li>Q-learning / SARSA</li></ul>
+        <p class="thanks">With Yosser Jabloun, supervised by Ms. Wafa Mefteh.</p>
+      </div>
+      <figure class="demo" style="align-self:center;margin:0"><video controls preload="metadata" playsinline><source src="demos/ids-agent.mp4" type="video/mp4" onerror="this.closest('figure').hidden=true"></video><figcaption>Live simulation: agent vs passive IDS</figcaption></figure>
+    </article>
+    <article class="card">
+      <span class="year">2026</span>
+      <h3>Kahrba</h3>
+      <p>An autonomous car that reads traffic signs and reacts to them: stop, turn and more.</p>
+      <ul class="chips"><li>Raspberry Pi</li><li>CNN</li></ul>
+      <figure class="demo"><video controls preload="metadata" playsinline><source src="demos/kahrba.mp4" type="video/mp4" onerror="this.closest('figure').hidden=true"></video><figcaption>Kahrba demo</figcaption></figure>
+    </article>
+    <article class="card">
+      <span class="year">2025</span>
+      <h3>Smart surveillance system</h3>
+      <p>Recognises intruders with computer vision and notifies the user immediately.</p>
+      <ul class="chips"><li>Arduino</li><li>OpenCV</li></ul>
+    </article>
+    <article class="card">
+      <span class="year">2026</span>
+      <h3>Button-controlled stopwatch</h3>
+      <p>A physical stopwatch driven by one button, with tasks scheduled by a real-time operating system.</p>
+      <ul class="chips"><li>STM32</li><li>FreeRTOS</li></ul>
+    </article>
+  </div>
+  <p class="muted" style="margin-top:1.6rem">More code on <a href="https://github.com/NourOuederni" target="_blank" rel="noopener" style="color:var(--pink-soft)">my GitHub</a>.</p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills and certifications</h2>
+  <div class="cols">
+    <div><h3>Embedded and IoT</h3><ul class="chips"><li>ESP32</li><li>STM32</li><li>Raspberry Pi</li><li>BeagleBone</li><li>Zolertia</li><li>FreeRTOS</li><li>LoRa</li></ul></div>
+    <div><h3>Networks and RF</h3><ul class="chips"><li>Cisco Packet Tracer</li><li>eNSP</li><li>ADS</li><li>MATLAB / Octave</li></ul></div>
+    <div><h3>Programming</h3><ul class="chips"><li>C / C++</li><li>Python</li><li>Java</li><li>React Native</li><li>OpenCV</li></ul></div>
+  </div>
+  <h2 style="margin-top:3.5rem">Certifications</h2>
+  <ul class="certs">
+    <li><b>NVIDIA: Rapid Application Development with LLMs</b><span class="muted">Certificate of Competency, October 2026</span></li>
+    <li><b>Certified Cybersecurity Educator Professional (CCEP)</b><span class="muted">Red Team Leaders, October 2026</span></li>
+    <li><b>CCNA: Introduction to Networks</b><span class="muted">Cisco Networking Academy via ENIT, June 2025</span></li>
+    <li><b>TOEIC: C1</b><span class="muted">English proficiency</span></li>
+  </ul>
+  <ul class="lang"><li><b>Arabic</b> native</li><li><b>French</b> C1</li><li><b>English</b> C1</li><li><b>German</b> A2</li><li><b>Japanese</b> beginner</li><li><b>Korean</b> beginner</li></ul>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Beyond the classroom</h2>
+  <ol class="tl">
+    <li><span class="when">2025 to 2026</span><h3>President, G2FOSS club</h3></li>
+    <li><span class="when">2025</span><h3>Marketing department member, NutriByte</h3></li>
+    <li><span class="when">2023 to 2024</span><h3>Member, Enactus IPEIT</h3></li>
+  </ol>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let’s talk</h2>
+  <p class="muted" style="max-width:34rem;margin:0">I’m looking for an internship in IoT, embedded systems, networks or applied AI. The fastest way to reach me:</p>
+  <a class="mail" href="mailto:nour.ouederni@etudiant-enit.utm.tn">nour.ouederni@etudiant-enit.utm.tn</a>
+  <div class="btns"><a class="btn ghost" href="https://github.com/NourOuederni" target="_blank" rel="noopener">github.com/NourOuederni</a> <a class="btn ghost" href="https://www.linkedin.com/in/nour-ouederni" target="_blank" rel="noopener">linkedin.com/in/nour-ouederni</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Nour Ouederni</div></footer>
+
+<script>
+(function(){
+  var c=document.getElementById('wave'),x=c.getContext('2d'),W,H,t=0;
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var r=window.devicePixelRatio||1;W=c.clientWidth;H=c.clientHeight;c.width=W*r;c.height=H*r;x.setTransform(r,0,0,r,0,0)}
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for(var k=0;k<5;k++){
+      x.beginPath();
+      for(var i=0;i<=W;i+=3){
+        var p=i/W, chirp=Math.sin(p*p*40+t*(1+k*.15)+k*.9);
+        var env=Math.exp(-Math.pow((p-.62+Math.sin(t*.3)*.08)*3.2,2));
+        var y=H*.55+chirp*env*(70-k*10)+Math.sin(p*9+t*.6+k)*8;
+        i?x.lineTo(i,y):x.moveTo(i,y);
+      }
+      x.strokeStyle='rgba(255,63,158,'+(0.75-k*.14)+')';x.lineWidth=2.2-k*.3;x.stroke();
+    }
+    t+=.025; if(!still)requestAnimationFrame(draw);
+  }
+  size();draw();window.addEventListener('resize',function(){size();if(still)draw()});
+})();
+</script>
+</body>
+</html>
